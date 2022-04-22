@@ -1,0 +1,94 @@
+{% load static %}
+{% static "images" as baseUrl %}
+<!DOCTYPE html>
+
+<head>
+        <style>
+body {
+  background-image: url({% static 'images/home_slider.jpg' %});
+}
+</style>
+{#    <meta charset='utf-8'>#}
+{#    <meta http-equiv='X-UA-Compatible' content='IE=edge'>#}
+{#    <title>Page Title</title>#}
+{#    <meta name='viewport' content='width=device-width, initial-scale=1'>#}
+{#    <link rel='stylesheet' type='text/css' media='screen' href='main.css'>#}
+{#    <script src='main.js'></script>#}
+{#    <meta name="viewport" content="width=device-width, initial-scale=1">#}
+
+<link href="//netdna.bootstrapcdn.com/bootstrap/3.1.0/css/bootstrap.min.css" rel="stylesheet" id="bootstrap-css">
+<script src="//netdna.bootstrapcdn.com/bootstrap/3.1.0/js/bootstrap.min.js"></script>
+<script src="//code.jquery.com/jquery-1.11.1.min.js"></script>
+
+
+
+</head>
+
+
+
+<body>
+
+{#    <form action="login" method="post">#}
+{#        {% csrf_token %}#}
+{#        <input type="text" name="username" placeholder="username"><br>#}
+{#        <input type="password" name="password" placeholder="password"><br>#}
+{#        <input type="Submit">#}
+{#    </form>#}
+
+<!------ Include the above in your HEAD tag ---------->
+
+<div class="container">
+
+<div class="row" style="margin-top:20px">
+
+    <div class="col-xs-12 col-sm-8 col-md-6 col-sm-offset-2 col-md-offset-3">
+		<form action="login" method="post">
+             {% csrf_token %}
+			<fieldset>
+				<h2>Please login</h2>
+				<hr class="colorgraph">
+				<div class="form-group">
+                    <input type="text" name="username" id="username" class="form-control input-lg" placeholder="username">
+				</div>
+				<div class="form-group">
+                    <input type="password" name="password" id="password" class="form-control input-lg" placeholder="Password">
+				</div>
+				<span class="button-checkbox">
+					<button type="button" class="btn" data-color="info">Remember Me</button>
+                    <input type="checkbox" name="remember_me" id="remember_me" checked="checked" class="hidden">
+					<a href="" class="btn btn-link pull-right">Forgot Password?</a>
+				</span>
+				<hr class="colorgraph">
+				<div class="row">
+					<div class="col-xs-6 col-sm-6 col-md-6">
+                        <input type="submit" class="btn btn-lg btn-success btn-block" value="Login">
+					</div>
+					<div class="col-xs-6 col-sm-6 col-md-6">
+						<a href="register" class="btn btn-lg btn-primary btn-block">Register</a>
+					</div>
+				</div>
+			</fieldset>
+		</form>
+	</div>
+</div>
+
+
+</div>
+
+
+
+    <div>
+            {% for message in messages %}
+            <h3> {{message}}  </h3>
+            {% endfor %}
+    </div>
+</body>
+
+
+
+
+
+</html>
+
+
+

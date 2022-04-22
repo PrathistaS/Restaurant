@@ -1,0 +1,105 @@
+{% load static %}
+{% static "images" as baseUrl %}
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <title>Dublin</title>
+	<meta charset="utf-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<meta name="description" content=" Dublin Nearby Place">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<link rel="stylesheet" type="text/css" href="{% static 'styles/bootstrap4/bootstrap.min.css' %}">
+	<link href="{% static 'plugins/font-awesome-4.7.0/css/font-awesome.min.css' %}" rel="stylesheet" type="text/css">
+	<link rel="stylesheet" type="text/css" href="{% static 'plugins/OwlCarousel2-2.2.1/owl.carousel.css' %}">
+	<link rel="stylesheet" type="text/css" href="{% static 'plugins/OwlCarousel2-2.2.1/owl.theme.default.css' %}">
+	<link rel="stylesheet" type="text/css" href="{% static 'plugins/OwlCarousel2-2.2.1/animate.css' %}">
+	<link rel="stylesheet" type="text/css" href="{% static 'styles/main_styles.css' %}">
+	<link rel="stylesheet" type="text/css" href="{% static 'styles/responsive.css' %}">
+{#    ----------#}
+    <meta charset='utf-8'>
+    <meta http-equiv='X-UA-Compatible' content='IE=edge'>
+    <title>Registeration</title>
+    <meta name='viewport' content='width=device-width, initial-scale=1'>
+    <link rel='stylesheet' type='text/css' media='screen' href='main.css'>
+    <script src='main.js'></script>
+    <style>
+    body {
+  background-image: url({% static 'images/home_slider.jpg' %});
+}</style>
+
+    <link href="//netdna.bootstrapcdn.com/bootstrap/3.1.0/css/bootstrap.min.css" rel="stylesheet" id="bootstrap-css">
+<script src="//netdna.bootstrapcdn.com/bootstrap/3.1.0/js/bootstrap.min.js"></script>
+<script src="//code.jquery.com/jquery-1.11.1.min.js"></script>
+</head>
+<body>
+{#    <form action="register" method="post">#}
+{#        {% csrf_token %}#}
+{##}
+{#        <input type="text" name="first_name" placeholder="First Name"><br>#}
+{#        <input type="text" name="last_name" placeholder="Last Name"><br>#}
+{#        <input type="text" name="username" placeholder="Username"><br>#}
+{#        <input type="email" name="email" placeholder="email"><br>#}
+{#        <input type="password" name="password1" placeholder="Password"><br>#}
+{#        <input type="password" name="password2" placeholder="Confirm Password"><br>#}
+{#        <input type="Submit">#}
+{##}
+{#    </form>#}
+
+<div class="container">
+
+<div class="row" style="margin-top:20px">
+    <div class="col-xs-12 col-sm-8 col-md-6 col-sm-offset-2 col-md-offset-3">
+		<form action="register" method="post">
+             {% csrf_token %}
+			<fieldset>
+				<h2>Please  Register</h2>
+				<hr class="colorgraph">
+				<div class="form-group">
+                    <input type="text" name="first_name" id="first_name" class="form-control input-lg" placeholder="first name">
+				</div>
+                <div class="form-group">
+                    <input type="text" name="last_name" id="last_name" class="form-control input-lg" placeholder="last name">
+				</div>
+                	<div class="form-group">
+                    <input type="text" name="username" id="username" class="form-control input-lg" placeholder="username">
+				</div>
+                	<div class="form-group">
+                    <input type="email" name="email" id="username" class="form-control input-lg" placeholder="email">
+				</div>
+				<div class="form-group">
+                    <input type="password" name="password1" id="password1" class="form-control input-lg" placeholder="Password">
+				</div>
+                <div class="form-group">
+                    <input type="password" name="password2" id="password2" class="form-control input-lg" placeholder="Confirm Password">
+				</div>
+				<span class="button-checkbox">
+					<button type="button" class="btn" data-color="info">Remember Me</button>
+                    <input type="checkbox" name="remember_me" id="remember_me" checked="checked" class="hidden">
+					<a href="" class="btn btn-link pull-right">Forgot Password?</a>
+				</span>
+				<hr class="colorgraph">
+				<div class="row">
+					<div class="col-xs-6 col-sm-6 col-md-6">
+                        <input type="submit" class="btn btn-lg btn-success btn-block" value="register">
+					</div>
+					<div class="col-xs-6 col-sm-6 col-md-6">
+						<a href="login" class="btn btn-lg btn-primary btn-block">login</a>
+					</div>
+				</div>
+			</fieldset>
+		</form>
+	</div>
+</div>
+
+</div>
+
+
+    <div>
+        {% for message in messages %}
+        <h3> {{message}}  </h3>
+        {% endfor %}
+    </div>
+
+</body>
+</html>
