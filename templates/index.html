@@ -20,7 +20,7 @@
 <style>
     .text_area
 {
-   width: 85%; //Change as per your requirement
+   width: 85%; 
 }
 .activity_results {
   {#height: 100%;#}
@@ -284,7 +284,7 @@ p {
 		</div>
 
 		<!-- Search -->
-        {% if user.is_authenticated %}
+        <!-- {% if user.is_authenticated %} -->
 		<div class="home_search">
 			<div class="container">
 				<div class="row">
@@ -314,7 +314,7 @@ p {
 				</div>
 			</div>
 		</div>
-        {% endif %}
+        <!-- {% endif %} -->
    <main role="main">
       <div class="start-display">
 
@@ -699,7 +699,7 @@ p {
 
 function renderDestData(data){
   console.log(data);
-  {#let imgSmall = data.imgSmall ? data.imgSmall : './images/no_image.png';#}
+//   {#let imgSmall = data.imgSmall ? data.imgSmall : './images/no_image.png';#}
   return`
     <div class="result_col_4">
      //<a href="https://www.google.com/maps/search/?api=1&query='${data.geometry.location.lat}'%2C-'${data.geometry.location.lat}'&query_place_id='${data.place_id}'" target="_blank">
